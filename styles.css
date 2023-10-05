@@ -87,11 +87,7 @@ nav ul li a:hover {
 
 /* Main Content Styles */
 #home {
-<<<<<<< HEAD
     background-image: url("/photos/IMG-20230514-WA0006.jpg");
-=======
-    background-image: url("./photos/IMG-20230514-WA0006.jpg");
->>>>>>> 0cd1e0065fab0b652ff230a0c62f3237a251e89a
     background-size: cover;
     background-position: center;
     text-align: center;
