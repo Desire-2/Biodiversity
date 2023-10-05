@@ -19,7 +19,7 @@ body {
 /* Header styles */
 header {
     background-color: #1e2a38;
-    color: #fff;
+    color: #f4ebeb;
     padding: 10px 0;
 }
 
@@ -75,11 +75,11 @@ main {
 }
 
 .hero-image {
-    background-image: url('./Photos/IMG-20230514-WA0005.jpg');
+    background-image: url('./Photos/IMG-20230514-WA0006.jpg');
     background-size: cover;
     text-align: center;
     padding: 100px 0;
-    color: #fff;
+    color: #150b9c;
 }
 
 .hero-image h1 {
