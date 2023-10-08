@@ -1,10 +1,8 @@
-/* Reset some default styles */
 body, h1, h2, p {
     margin: 0;
     padding: 0;
 }
 
-/* Global styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f7f7f7;
@@ -16,7 +14,6 @@ body {
     padding: 20px;
 }
 
-/* Header styles */
 header {
     background-color: #1e2a38;
     color: #f4ebeb;
@@ -106,8 +103,6 @@ main {
 .cta-button:hover {
     background-color: #ffdb4d;
 }
-
-/* Mission and Vision styles */
 #mission-vision h2 {
     font-size: 28px;
     margin-top: 40px;
@@ -203,7 +198,6 @@ footer {
         margin-bottom: 20px;
     }
 }
-/* Events Section Styles */
 #events {
     text-align: center;
     padding: 40px 0;
@@ -260,8 +254,6 @@ footer {
     margin: 0 auto;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
 }
-
-/* Additional Styles (optional) */
 .gallery-category {
     margin-bottom: 40px;
 }
@@ -381,17 +373,14 @@ footer {
     cursor: pointer;
 }
 
-/* JavaScript Styles */
 .hidden {
     display: none;
 }
-/* Reset some default styles for better consistency */
 body, h1, h2, p {
     margin: 0;
     padding: 0;
 }
 
-/* Basic Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -404,7 +393,6 @@ body {
     padding: 20px;
 }
 
-/* Donation Form Styles */
 .donation-form {
     background-color: #fff;
     padding: 20px;
