@@ -6,6 +6,7 @@ body, h1, h2, p {
 body {
     font-family: Arial, sans-serif;
     background-color: #f7f7f7;
+    display:inline-block;
 }
 
 .container {
@@ -92,11 +93,17 @@ main {
 .hero-image h1 {
     font-size: 36px;
     margin-bottom: 20px;
+    color: #d00e11;
 }
 
 .hero-image p {
     font-size: 18px;
     margin-bottom: 30px;
+    color: #4afe03;
+    font-size: larger;
+    font-style: italic;
+    font-weight: bold;
+    font-stretch: ultra-expanded;
 }
 
 .cta-button {
@@ -436,16 +443,7 @@ footer {
 .hidden {
     display: none;
 }
-body, h1, h2, p {
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-}
 
 .container {
     max-width: 1200px;
