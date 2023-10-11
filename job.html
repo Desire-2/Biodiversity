@@ -1,26 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        /* Job Listings Section */
+#job-listings, #scholarship-listings {
+  padding: 20px;
+}
+
+#job-listings, #scholarship-listings h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #337ab7;
+}
+
+#job-listings, #scholarship-listings ul {
+  list-style: none;
+  padding: 0;
+}
+
+#job-listings, #scholarship-listings li {
+  margin-bottom: 10px;
+}
+
+#job-listings, #scholarship-listings a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+#job-listings,  a:hover {
+  color: #ffcc33;
+}
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biodiversity Nexus Rwanda - Testimonials</title>
+    <title>Biodiversity Nexus Rwanda</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <nav>
-            <div id="logo">Biodiversity Nexus</div>
+            <div id="logo">Biodiversity Nexus </div>
             <div id="menu-toggle" class="nav-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu"><h1>Job and Scholarship Listings</h1>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="job.html">Jobs & Scholarships</a></li>
                 <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="donate.html">Donate</a></li>
                 <li><a href="partners.html">Partners</a></li>
@@ -29,45 +60,47 @@
         </nav>
     </header>
 
-    <main>
-        <!-- Testimonials Section -->
-        <section id="testimonials">
-            <div class="container">
-                <h1>Testimonials</h1>
-                <!-- Container to display testimonials -->
-                <div id="testimonial-container"></div>
+    <section id="job-listings">
+        <h2>Job Listings</h2>
+        <ul>
+            <!-- Example job listing with a link -->
+            <li>
+                <a href="https://www.jobinrwanda.com/job/call-research-proposalsabstracts-10th-eprn-annual-research-conference">
+                CALL FOR RESEARCH PROPOSALS/ABSTRACTS FOR THE 10TH EPRN ANNUAL RESEARCH CONFERENCE 
+            </a></li>
+            <!--
+                <li><a href="">Job Title 2</a></li>
+            <li><a href="">Job Title 1</a></li>
+            <li><a href="">Job Title 2</a></li>
+            <li><a href="">Job Title 1</a></li>
+            <li><a href="">Job Title 2</a></li>
+            <li><a href="">Job Title 1</a></li>
+            <li><a href="">Job Title 2</a></li>
+            <!-- Add more job listings as needed -->
+            -->
+            
+        </ul>
+    </section>
 
-                <!-- Testimonial form (unchanged) -->
-                <div class="testimonial-form">
-                    <h2>Submit a Testimonial</h2>
-                    <form action="submit_testimonial.php" method="post">
-                        <label for="author">Your Name:</label>
-                        <input type="text" id="author" name="author" required>
-                        
-                        <label for="message">Testimonial:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                        
-                        <button type="submit">Submit</button>
-                    </form> 
-                </div>
-            </div>
-        </section>
-         <!-- Testimonials Section -->
-         <section id="testimonials">
-            <div class="container">
-                <h1>Testimonials</h1>
-                <!-- PHP code to display testimonials -->
-                <?php
-                $file = 'testimonials.txt';
-                if (file_exists($file)) {
-                    $testimonials = file_get_contents($file);
-                    echo nl2br($testimonials);
-                } else {
-                    echo "No testimonials available.";
-                }
-                ?>
-            </div>
-        </section>
+    <section id="scholarship-listings">
+        <h2>Scholarship & Internship Listings</h2>
+        <ul>
+            <!-- Example scholarship listing with a link -->
+            <li><a href="">Top Conservation Scholarships | Training, Experiences & Research Projects</a></li>
+            <li><a href="https://www.jobinrwanda.com/job/acr-call-application-professional-accounting-training-and-internship">
+                ACR - CALL FOR APPLICATION FOR PROFESSIONAL ACCOUNTING TRAINING AND INTERNSHIP</a></li>
+                <li><a href="https://www.jobinrwanda.com/employer/akagera-management-company">
+                    AKAGERA NATIONAL PARK INTERN VACANCY ANNOUNCEMENT
+                </a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            <!-- Add more scholarship listings as needed -->
+        </ul>
+    </section>
+
+
+        <a href="projects.html" class="cta-button">Get Involved in Our Project</a>
     </main>
 
     <!-- Include the footer section here -->
@@ -100,7 +133,6 @@
         </div>
     </footer>
 
-    <script src="testimonials.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -8,15 +8,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $author = htmlspecialchars($author);
     $message = htmlspecialchars($message);
 
-    // Store the testimonial in a database or file (for this example, we'll use a file)
+    // Store the testimonial in a file
     $file = 'testimonials.txt';
     $newTestimonial = "Author: $author\nMessage: $message\n\n";
 
     // Append the new testimonial to the file
-    file_put_contents($file, $newTestimonial, FILE_APPEND);
-
-    // Redirect back to testimonials page
-    header("Location: testimonials.html");
-    exit();
+    if (file_put_contents($file, $newTestimonial, FILE_APPEND | LOCK_EX) !== false) {
+        // Testimonial saved successfully
+        header("Location: testimonials.html");
+        exit();
+    } else {
+        // Error handling: Failed to save the testimonial
+        echo "Failed to save the testimonial.";
+    }
 }
 ?>
