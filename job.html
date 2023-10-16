@@ -9,10 +9,11 @@
   border-radius: 30px;
 }
 
-#job-listings, #scholarship-listings h2 {
+#job-listings, #scholarship-listings, h2 {
   font-size: 24px;
   margin-bottom: 10px;
-  color: #337ab7;
+  color: #031c32;
+  padding: 5px;
 }
 
 #job-listings, #scholarship-listings ul {
@@ -22,16 +23,27 @@
 
 #job-listings, #scholarship-listings li {
   margin-bottom: 10px;
+  padding: 10px;
 }
 
 #job-listings, #scholarship-listings a {
-  color: #337ab7;
+  color: #08bd08;
   text-decoration: none;
 }
 
-#job-listings,  a:hover {
+#job-listings  a:hover {
   color: #ffcc33;
 }
+#job-listings  a:hover:link {
+    color: aqua;
+}
+#job-listings  a:hover:active{
+    color: rgb(94, 2, 51);
+}
+#job-listings  a:hover:checked{
+    color: rgb(74, 156, 7);
+}
+
 #scholarship-listings {
     display: block;
     align-items: center;
@@ -39,7 +51,10 @@
     font-weight: 700;
     border: 10px solid black;
     border-radius: 30px;
-    padding: 20px;
+    padding: 40px;
+}
+#scholarship-listings a:hover {
+  color: #ffcc33;
 }
 
     </style>
@@ -98,9 +113,13 @@
         <h2>Scholarship & Internship Listings</h2>
         <ul>
             <!-- Example scholarship listing with a link -->
-            <li><a href="">Top Conservation Scholarships | Training, Experiences & Research Projects</a></li>
+            <li><a href="https://www.conservation-careers.com/top-conservation-scholarships/">
+                Top Conservation Scholarships | Training, Experiences & Research Projects
+
+            </a></li>
             <li><a href="https://www.jobinrwanda.com/job/acr-call-application-professional-accounting-training-and-internship">
-                ACR - CALL FOR APPLICATION FOR PROFESSIONAL ACCOUNTING TRAINING AND INTERNSHIP</a></li>
+                ACR - CALL FOR APPLICATION FOR PROFESSIONAL ACCOUNTING TRAINING AND INTERNSHIP
+            </a></li>
                 <li><a href="https://www.jobinrwanda.com/employer/akagera-management-company">
                     AKAGERA NATIONAL PARK INTERN VACANCY ANNOUNCEMENT
                 </a></li>
