@@ -46,7 +46,7 @@ nav a:hover {
 
 /* Hero section styles */
 .hero {
-    background-image: url('/Photos/IMG-20230514-WA0007.jpg');
+    background-color: #8e8989;
     background-size: cover;
     background-position: center;
     text-align: center;
