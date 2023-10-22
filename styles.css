@@ -21,12 +21,18 @@ header {
     padding: 10px 0;
     margin: 2px;
     display: inline-block;
-
+    border-radius: 30px;
+    align-items: center;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
+    
+}
+.nav-menu {
+    padding: 10px;
+    margin: 10px;
     align-items: center;
 }
 
@@ -36,13 +42,10 @@ nav {
     text-transform: uppercase;
     display: flex; /* Add this to make it a flex container */
     align-items: center; /* Vertically align the logo and image */
+    
 }
 
-#logo img {
-    width: 40px; /* Adjust the width to your preference */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Add some spacing between the logo text and image */
-}
+
 
 .nav-toggle {
     display: none;
@@ -257,6 +260,7 @@ footer {
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
 }
 
 .project:hover {
@@ -288,8 +292,9 @@ footer {
         flex: 100%;
         margin-bottom: 20px;
     }
+
 }
-#events {
+#events  {
     text-align: center;
     padding: 40px 0;
 }
@@ -670,6 +675,9 @@ footer {
   @media only screen and (max-width: 400px) {
     body {
         display: inline-block;
+    }
+    .nav-menu {
+       align-items: flex;
     }
   }
   
