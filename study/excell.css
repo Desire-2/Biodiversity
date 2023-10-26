@@ -79,7 +79,6 @@ h1 {
 }
 #table-of-contents a:visited {
     color: #f9f9f9;
-    display: none;
 }
 #table-of-contents a:active {
     color: aqua;
@@ -87,6 +86,15 @@ h1 {
 #table-of-contents a:visited:hover {
     color: #12f10a;
 }
+.container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #table-of-contents {
+            flex: 1;
+            margin-right: 20px; 
+        }
 
 
 /* Style the nested ordered list */
@@ -102,5 +110,81 @@ iframe {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
+}
+/* Style the content sections */
+.course > section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 20px;
+    
+}
+
+.course h2 {
+    font-size: 28px;
+    margin: 0 0 20px;
+}
+
+.course h3 {
+    font-size: 20px;
+    margin: 0 0 20px;
+}
+
+.course p {
+    font-size: 16px;
+    margin: 0 0 20px;
+}
+
+/* Style the sub-sections (h4) */
+.course h4 {
+    font-size: 18px;
+    margin: 20px 0 10px;
+}
+
+/* Style the unordered list */
+.course ul {
+    list-style: none;
+    padding: 0;
+}
+
+.course ul li {
+    margin: 0;
+    padding: 0 0 10px;
+}
+
+.course ul li strong {
+    font-weight: bold;
+}
+
+/* Additional styling for the iframe */
+.course iframe {
+    max-width: 100%;
+}
+
+/* Style the sub-sections (h4) */
+.course h4 {
+    font-size: 18px;
+    margin: 20px 0 10px;
+}
+
+/* Style the unordered list */
+.course ul {
+    list-style: none;
+    padding: 0;
+}
+
+.course ul li {
+    margin: 0;
+    padding: 0 0 10px;
+}
+
+.course ul li strong {
+    font-weight: bold;
+}
+
+/* Additional styling for the iframe */
+.course iframe {
+    max-width: 100%;
 }
 
