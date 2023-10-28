@@ -7,12 +7,30 @@ body, h1, h2, h3, p, ol, ul, li {
 /* Set a background color for the body */
 
 .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* To separate the sections */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+#table-of-contents {
+    width: 30%; /* Adjust the width as needed */
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-right: 10px;
+    flex-grow: 1; /* Allow the table of contents to grow to fill the available space */
+}
+
+#course-content {
+    width: 65%; /* Adjust the width as needed */
+}
+
 
 /* Style the page title */
 h1 {
@@ -28,6 +46,8 @@ h1 {
     font-size: 20px;
     margin-bottom: 20px;
     color: #666;
+    font-style: italic;
+    font-weight: 700;
 }
 
 /* Style the Table of Contents */
@@ -86,21 +106,12 @@ h1 {
 #table-of-contents a:visited:hover {
     color: #12f10a;
 }
-.container {
-            display: flex;
-            flex-wrap: wrap;
-        }
 
-        #table-of-contents {
-            flex: 1;
-            margin-right: 20px; 
-        }
+
 
 
 /* Style the nested ordered list */
-#table-of-contents ol ol {
-    margin-left: 20px;
-}
+
 
 /* Style the video iframes */
 iframe {
@@ -112,14 +123,6 @@ iframe {
     margin-bottom: 20px;
 }
 /* Style the content sections */
-.course > section {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    padding: 20px;
-    
-}
 
 .course h2 {
     font-size: 28px;
@@ -157,10 +160,6 @@ iframe {
     font-weight: bold;
 }
 
-/* Additional styling for the iframe */
-.course iframe {
-    max-width: 100%;
-}
 
 /* Style the sub-sections (h4) */
 .course h4 {
@@ -182,9 +181,3 @@ iframe {
 .course ul li strong {
     font-weight: bold;
 }
-
-/* Additional styling for the iframe */
-.course iframe {
-    max-width: 100%;
-}
-

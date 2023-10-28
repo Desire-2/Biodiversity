@@ -1,0 +1,18 @@
+{
+  "name": "biodiversity",
+  "version": "1.0.0",
+  "description": "![Biodiversity Nexus Rwanda Logo](./Photos/IMG-20230514-WA0007.jpg)",
+  "main": "script.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.6.3",
+    "nodemon": "^3.0.1"
+  }
+}

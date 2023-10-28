@@ -5,6 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biodiversity Nexus Rwanda - Events</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="date"],
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 100px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Styling for the form container */
+.container {
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Optional: Styling for the heading */
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* Additional styling for labels or placeholders (optional) */
+#eventTitle::placeholder,
+#eventDate::placeholder,
+#eventDescription::placeholder,
+#eventLocation::placeholder {
+  color: #999;
+}
+
+/* Style for file input */
+input[type="file"] {
+  border: none;
+  background: none;
+}
+
+/* Hide the default file input text */
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+/* Style the custom file upload button */
+input[type="file"]::before {
+  content: 'Upload Image';
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -58,12 +142,25 @@
         
                 <!-- Event 3: Educational Event for Local Communities -->
                 <div class="event">
-                    <img src="./Photos/IMG-20230514-WA0006.jpg" alt="Educational Event">
+                    <img src="./Photos/IMG-20230514-WA0005.jpg" alt="Biodiversity Nexus Rwanda Logo" srcset="">
                     <h2>Educational Event for Local Communities</h2>
                     <p>Date: Every Week</p>
                     <p>Location: Nyarugenge Campus Or Online</p>
                     <p>Description: Join us for an educational event in Nyabihu District where we will raise awareness about the importance of conservation. Learn about local wildlife, biodiversity, and how you can contribute to preserving our natural heritage.</p>
                 </div>
+                <form id="eventForm">
+                    <input type="text" id="eventTitle" placeholder="Event Title" required>
+                    <input type="date" id="eventDate" required>
+                    <input type="file" id="eventImage" accept="image/*" required>
+                    <textarea id="eventDescription" placeholder="Event Description" required></textarea>
+                    <input type="text" id="eventLocation" placeholder="Event Location" required>
+                    <button type="submit">Add Event</button>
+                </form>
+                
+                <!-- Event Display Area -->
+                <div id="eventDisplay"></div>
+                
+                
         
                 <!-- Add more events here as needed -->
         
@@ -104,5 +201,50 @@
 
 
     <script src="script.js"></script>
+    <script>
+        // Function to display events on the webpage
+        async function displayEvents() {
+            const eventDisplay = document.getElementById('eventDisplay');
+            eventDisplay.innerHTML = '';
+        
+            const response = await fetch('/events');
+            const events = await response.json();
+        
+            events.forEach(event => {
+                const eventElement = document.createElement('div');
+                eventElement.innerHTML = `
+                    <h3>${event.title}</h3>
+                    <p>Date: ${new Date(event.date).toDateString()}</p>
+                `;
+                eventDisplay.appendChild(eventElement);
+            });
+        }
+        
+        // Function to add a new event
+        document.getElementById('eventForm').addEventListener('submit', async event => {
+    event.preventDefault();
+
+    const title = document.getElementById('eventTitle').value;
+    const date = document.getElementById('eventDate').value;
+    const image = document.getElementById('eventImage').files[0];
+    const description = document.getElementById('eventDescription').value;
+    const location = document.getElementById('eventLocation').value;
+
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('date', date);
+    formData.append('image', image);
+    formData.append('description', description);
+    formData.append('location', location);
+
+    const response = await fetch('/events', {
+        method: 'POST',
+        body: formData,
+    });
+
+    const newEvent = await response.json();
+    displayEvents();
+});
+        </script>
 </body>
 </html>

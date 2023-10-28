@@ -37,6 +37,63 @@
         <section id="gallery">
             <div class="container">
                 <h1>Photo Gallery</h1>
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img src="../Photos/1.jpg" style="width:100%">
+                    </div>
+                
+                    <div class="mySlides fade">
+                        <img src="/Photos/2.jpg" style="width:100%">
+                    </div>
+                
+                    <div class="mySlides fade">
+                        <img src="../Photos/3.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="../Photos/4.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="../Photos/5.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="../Photos/6.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="../Photos/7.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="../Photos/8.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="../Photos/9.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="../Photos/10.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="../Photos/11.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="../Photos/12.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="../Photos/13.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="../Photos/14.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="../Photos/15.jpg" style="width:100%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="../Photos/16.jpg" style="width:100%">
+                    </div>
+                
+                    <!-- Add more images with similar structure -->
+                
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
                 <div class="gallery-image">
                     <figure>
                         <img src="./Photos/IMG-20230514-WA0007.jpg" alt="Image 1">
@@ -66,8 +123,7 @@
             <div class="footer-content">
                 <!-- Logo (if applicable) -->
                 <!-- <img src="logo.png" alt="Biodiversity Nexus Rwanda Logo"> -->
-                <img src="./Photos/Screenshot 2023-10-08 015223.png" alt="Biodiversity Nexus Rwanda Logo" srcset="">
-                <!-- Contact Information -->
+                <img src="./Photos/Log D.png" alt="Biodiversity Nexus Rwanda Logo" srcset="">
                 <div class="contact-info">
                     <h3>Contact Us</h3>
                     <p>Email: biodiversitynexus@yahoo.com
@@ -99,5 +155,30 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+       let slideIndex = 1;
+
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+}
+ 
+    </script>
 </body>
 </html>
