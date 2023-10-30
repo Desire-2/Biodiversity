@@ -2,36 +2,58 @@
 body, h1, h2, h3, p, ol, ul, li {
     margin: 0;
     padding: 0;
+
 }
 
 /* Set a background color for the body */
-
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* To separate the sections */
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+section {
+    display: inline-block;
 }
 
-#table-of-contents {
-    width: 30%; /* Adjust the width as needed */
+
+ /* Style for table of contents */
+ #table-of-contents {
+    top: 50px;
+    right: 10px;
+    width: 300px;
+    padding: 10px;
     background-color: #f9f9f9;
-    padding: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    margin-right: 10px;
-    flex-grow: 1; /* Allow the table of contents to grow to fill the available space */
+    display: inline-block;
+}
+#table-of-contents h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+#table-of-contents ol {
+    list-style: none;
+    counter-reset: section;
+    padding: 0;
+}
+#table-of-contents li {
+    margin-bottom: 5px;
+}
+#table-of-contents a::before {
+    content: counter(section) ". ";
+    counter-increment: section;
+}
+.courses {
+    position: static;
+    left: 300px;
 }
 
 #course-content {
     width: 65%; /* Adjust the width as needed */
 }
 
-
+.video-container {
+    padding: 10px;
+    margin: 5px;
+    border: 10px;
+    border-radius: 30px;
+}
 /* Style the page title */
 h1 {
     font-size: 32px;
@@ -50,15 +72,6 @@ h1 {
     font-weight: 700;
 }
 
-/* Style the Table of Contents */
-#table-of-contents {
-    background-color: #f9f9f9;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-}
-
 #table-of-contents h2 {
     font-size: 26px;
     color: #333;
@@ -74,7 +87,6 @@ h1 {
     list-style: none;
     background-color: #1f1d1d;
     padding: 10px;
-    margin: 10px;
     border-radius: 10px;
 }
 
@@ -110,19 +122,6 @@ h1 {
 
 
 
-/* Style the nested ordered list */
-
-
-/* Style the video iframes */
-iframe {
-    width: 100%;
-    height: 400px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-}
-/* Style the content sections */
 
 .course h2 {
     font-size: 28px;
