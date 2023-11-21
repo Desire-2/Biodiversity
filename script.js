@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         imageElement.classList.add('lightbox-image');
         lightboxContainer.appendChild(imageElement);
         lightboxOverlay.style.display = 'flex';
+        lightboxOverlay.style.justfy = 'cente';
     }
 
     // Function to close the lightbox
@@ -56,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
             closeLightbox();
         }
     });
-});
 // JavaScript for Gallery
 const galleryImages = document.querySelectorAll('.gallery-image');
 
@@ -66,6 +66,7 @@ galleryImages.forEach((image) => {
         const caption = image.querySelector('figcaption');
         caption.style.opacity = '1';
         caption.style.transform = 'translateY(0)';
+
     });
 
     image.addEventListener('mouseleave', () => {
