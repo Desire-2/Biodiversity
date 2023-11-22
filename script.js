@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         imageElement.classList.add('lightbox-image');
         lightboxContainer.appendChild(imageElement);
         lightboxOverlay.style.display = 'flex';
-        lightboxOverlay.style.justfy = 'cente';
+    
     }
 
     // Function to close the lightbox
