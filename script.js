@@ -148,3 +148,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// Wait for the DOM to be fully loaded before executing the script
+document.addEventListener("DOMContentLoaded", function () {
+    // Get references to the menu toggle button and the navigation menu
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
+    // Check if the required elements are found
+    if (menuToggle && navMenu) {
+        // Add a click event listener to the menu toggle button
+        menuToggle.addEventListener("click", function () {
+            // Toggle the 'active' class on the nav menu
+            navMenu.classList.toggle("active");
+        });
+    } else {
+        console.error("Menu toggle button or nav menu not found. Check your HTML structure.");
+    }
+});
+
+// Additional modifications or functionality can be added below this line
+// For example, you can add more interactivity or handle other events

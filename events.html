@@ -71,7 +71,8 @@ h1 {
 
 /* Style for file input */
 input[type="file"] {
-  border: none;
+  border: 5px solid black;
+  border-radius: 30px;
   background: none;
 }
 
@@ -89,6 +90,24 @@ input[type="file"]::before {
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #fff;
+}
+#eventDisplay {
+            margin-top: 20px;
+        }
+    }
+
+.event {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.event img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
     </style>
 </head>
@@ -150,17 +169,25 @@ input[type="file"]::before {
                     <p>Location: Nyarugenge Campus Or Online</p>
                     <p>Description: Join us for an educational event in Nyabihu District where we will raise awareness about the importance of conservation. Learn about local wildlife, biodiversity, and how you can contribute to preserving our natural heritage.</p>
                 </div>
+                
                 <form id="eventForm">
-                    <input type="text" id="eventTitle" placeholder="Event Title" required>
+                    <label for="eventTitle">Event Title:</label>
+                    <input type="text" id="eventTitle" placeholder="Enter event title" required>
+
+                    <label for="eventDate">Event Date:</label>
                     <input type="date" id="eventDate" required>
+
+                    <label for="eventImage">Event Image:</label>
                     <input type="file" id="eventImage" accept="image/*" required>
-                    <textarea id="eventDescription" placeholder="Event Description" required></textarea>
-                    <input type="text" id="eventLocation" placeholder="Event Location" required>
+
+                    <label for="eventDescription">Event Description:</label>
+                    <textarea id="eventDescription" placeholder="Enter event description" required></textarea>
+
+                    <label for="eventLocation">Event Location:</label>
+                    <input type="text" id="eventLocation" placeholder="Enter event location" required>
+
                     <button type="submit">Add Event</button>
                 </form>
-                
-                <!-- Event Display Area -->
-                <div id="eventDisplay"></div>
                 
                 
         
@@ -204,49 +231,56 @@ input[type="file"]::before {
 
     <script src="script.js"></script>
     <script>
-        // Function to display events on the webpage
-        async function displayEvents() {
+     // Function to display events on the webpage
+     async function displayEvents() {
             const eventDisplay = document.getElementById('eventDisplay');
             eventDisplay.innerHTML = '';
-        
+
             const response = await fetch('/events');
             const events = await response.json();
-        
+
             events.forEach(event => {
                 const eventElement = document.createElement('div');
+                eventElement.className = 'event'; // Additional class for styling
                 eventElement.innerHTML = `
-                    <h3>${event.title}</h3>
+                    <img src="${event.image}" alt="${event.title}">
+                    <h2>${event.title}</h2>
                     <p>Date: ${new Date(event.date).toDateString()}</p>
+                    <p>Description: ${event.description}</p>
+                    <p>Location: ${event.location}</p>
                 `;
                 eventDisplay.appendChild(eventElement);
             });
         }
-        
+
         // Function to add a new event
         document.getElementById('eventForm').addEventListener('submit', async event => {
-    event.preventDefault();
+            event.preventDefault();
 
-    const title = document.getElementById('eventTitle').value;
-    const date = document.getElementById('eventDate').value;
-    const image = document.getElementById('eventImage').files[0];
-    const description = document.getElementById('eventDescription').value;
-    const location = document.getElementById('eventLocation').value;
+            const title = document.getElementById('eventTitle').value;
+            const date = document.getElementById('eventDate').value;
+            const image = document.getElementById('eventImage').files[0];
+            const description = document.getElementById('eventDescription').value;
+            const location = document.getElementById('eventLocation').value;
 
-    const formData = new FormData();
-    formData.append('title', title);
-    formData.append('date', date);
-    formData.append('image', image);
-    formData.append('description', description);
-    formData.append('location', location);
+            const formData = new FormData();
+            formData.append('title', title);
+            formData.append('date', date);
+            formData.append('image', image);
+            formData.append('description', description);
+            formData.append('location', location);
 
-    const response = await fetch('/events', {
-        method: 'POST',
-        body: formData,
-    });
+            const response = await fetch('/events', {
+                method: 'POST',
+                body: formData,
+            });
 
-    const newEvent = await response.json();
-    displayEvents();
-});
-        </script>
+            const newEvent = await response.json();
+            displayEvents();
+        });
+    </script>
+</body>
+</html>   
+     </script>
 </body>
 </html>
